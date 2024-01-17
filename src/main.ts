@@ -1,10 +1,9 @@
-let username = 'Prateek'
-console.log(username);
+let myName: string = 'Prateek'
+let meaningOfLife: number;
+let isLoading: boolean;
+let album: any;
 
-
-let a = 12
-let b = 6
-let c = 2;
-
-console.log(a/b)
-console.log(c * b)
+myName = 'Prateek'
+meaningOfLife = 45
+isLoading = true 
+album = true 
