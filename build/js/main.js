@@ -1,63 +1,23 @@
 "use strict";
-// Literal types 
-let myName;
-let userName;
-userName = 'Abhiyan';
-// Function 
-const add = (a, b) => {
-    return a + b;
+//convert to more or less specific 
+let a = 'hello';
+let b = a; //less specific 
+let c = a; //more specific 
+let d = 'world';
+let e = 'world';
+const addOrConcat = (a, b, c) => {
+    if (c == 'add')
+        return a + b;
+    return '' + a + b;
 };
-const logMsg = (message) => {
-    console.log(message);
-};
-logMsg('Hello!');
-logMsg(add(2, 3));
-let subtract = function (c, d) {
-    return c - d;
-};
-let multiply = function (c, d) {
-    return c * d;
-};
-logMsg(multiply(2, 2));
-//optional parameters 
-const addAll = (a, b, c) => {
-    if (typeof c !== 'undefined') {
-        return a + b + c;
-    }
-    return a + b;
-};
-const sumAll = (a = 10, b, c = 2) => {
-    return a + b;
-};
-logMsg(addAll(2, 3, 2));
-logMsg(addAll(2, 3));
-logMsg(sumAll(undefined, 3));
-//Rest Parameter 
-const total = (a, ...nums) => {
-    return a + nums.reduce((prev, curr) => prev + curr);
-};
-logMsg(total(1, 2, 3, 4));
-const createError = (errMsg) => {
-    throw new Error(errMsg);
-};
-const infinte = () => {
-    let i = 1;
-    while (true) {
-        i++;
-        if (i > 100)
-            break;
-    }
-};
-//custom type guard
-const isNumber = (value) => {
-    return typeof value == 'number'
-        ? true : false;
-};
-//use of the never type
-const numberOrString = (value) => {
-    if (typeof value == 'string')
-        return 'string';
-    if (isNumber(value))
-        return 'number';
-    return createError('This should never happen!');
-};
+let myVal = addOrConcat(2, 2, 'concat');
+//Be careful! TS sees no problem -but a string is returned  
+let nextVal = addOrConcat(2, 2, 'concat');
+// 10 as string 
+10;
+// The DOM 
+const img = document.querySelector('img');
+const myImg = document.getElementById('#img');
+const nextImg = document.getElementById('#img');
+img.src;
+myImg.src;
